@@ -43,7 +43,23 @@
 		<Snippet>
 			<Code Language="CPP">
 				<![CDATA[ 	const int int_to_print = 1.0f;
-							if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::Printf(TEXT("float: %i"), int_to_print));]]>
+							if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::Printf(TEXT("int: %i"), int_to_print));]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+	<!--<Int64>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Print Screen Int64 Unreal </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>To print a message in screen of type Int64 in unreal engine</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[ 	const int64 i = 45646541651312;
+							if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::Printf(TEXT("%lld"), i));]]>
 			</Code>
 		</Snippet>
 	</CodeSnippet>
@@ -90,7 +106,7 @@
 		<Header>
 			<Title>Print Console Concatenate Unreal </Title>
 			<Author>Ariel Gimenez</Author>
-			<Description>To print a message in screen of type FRotator in unreal engine</Description>
+			<Description>to print messages in console concatenated of types int,float,FString  </Description>
 			<!--<Shortcut> Alt </Shortcut>-->
 		</Header>
 		<Snippet>
@@ -102,8 +118,6 @@
 			</Code>
 		</Snippet>
 	</CodeSnippet>
-
-
 
 
 
