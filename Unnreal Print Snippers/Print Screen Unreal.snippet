@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+	<!--<FString>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Print Screen FString Unreal </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>To print a message in screen of type FString in unreal engine</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[ if(GEngine) GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Yellow, TEXT("Some debug message!"));]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+	<!--<Float>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Print Screen Float Unreal </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>To print a message in screen of type Float in unreal engine</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[ const float float_to_print = 1.0f;
+						  if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::Printf(TEXT("float: %f"), float_to_print));]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+	<!--<Int>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Print Screen Int Unreal </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>To print a message in screen of type Int in unreal engine</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[ 	const int int_to_print = 1.0f;
+							if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::Printf(TEXT("float: %i"), int_to_print));]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
+
+	<!--<FVector>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Print Screen FVector Unreal </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>To print a message in screen of type FVector in unreal engine</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+			<![CDATA[ 	const FVector position_to_print = FVector::ZeroVector;
+						if (GEngine) GEngine->AddOnScreenDebugMessage(-10, 3.0f, FColor::Yellow, FString::Printf(TEXT("Position: %f - %f - %f"), position.X, position.Y, position.Z));]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
+	<!--<FRotator>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Print Screen FRotator Unreal </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>To print a message in screen of type FRotator in unreal engine</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[ 	const FRotator rotation_to_print = GetActorRotation();
+							if (GEngine) GEngine->AddOnScreenDebugMessage(-10, 3.0f, FColor::Yellow, FString::Printf(TEXT("Rotation: %f - %f - %f"), rotation_to_print.Pitch, rotation_to_print.Yaw, rotation_to_print.Roll));]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
+
+	<!--<FConcatenate>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Print Console Concatenate Unreal </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>To print a message in screen of type FRotator in unreal engine</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[ 	int intVar = 5;
+							float floatVar = 3.7f;
+							FString fstringVar = "an fstring variable";
+							UE_LOG(LogTemp, Warning, TEXT("Text, %d %f %s"), intVar, floatVar, *fstringVar);]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
+
+
+
+</CodeSnippets>
+
