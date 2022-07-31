@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+	<!--<Box trigger OnOverlapBegin>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>BoxComponent OnComponentBeginOverlap Unreal </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>template to create a trigger event with OnComponentBeginOverlap an Component of type BoxComponent</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+	////////////
+/// in .H
+private:
+	UPROPERTY(EditAnywhere)
+	class UBoxComponent* Box;
+public:
+	UFUNCTION()
+		void on_component_begin_overlap(class UPrimitiveComponent* OverlappedComp, AActor * OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
+////In.CPP
+
+//include in .cpp
+#include "Components/BoxComponent.h"
+
+//in constructor
+	Box = CreateDefaultSubobject<UBoxComponent>(TEXT("BoxTriggerComponent"));
+
+	//in beginPlay
+	Box->OnComponentBeginOverlap.AddDynamic(this, &AEnemy::on_component_begin_overlap);
+	///////////
+						]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
+</CodeSnippets>
+
