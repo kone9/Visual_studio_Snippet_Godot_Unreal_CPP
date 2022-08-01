@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+	<!--<Spawn Actor>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title> Spawn Actor </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>Spawn Actor</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+				// Don't forget to include World.h to use methods inside UWorld Class
+				FActorSpawnParameters spawn_params{};
+				spawn_params.Owner = nullptr; // Specify owner actor for this new actor if you need one.
+				spawn_params.Instigator = nullptr; // Specify instigator pawn for this new actor if you need one
+				spawn_params.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+
+				auto* const new_actor_class = AActor::StaticClass(); // If you need other class than AActor you can change with YOURCLASS::StaticClass() to get UClass
+				//.h
+				// If you need to spawn class made it in blueprint you can use TSubClassOf to get the UClass
+				//UPROPERTY(EditAnywhere, Category = Spawner)
+				//TSubclassOf<AActor> blueprint_class{};
+
+				const auto new_actor_transform = FTransform::Identity; // Identity Matrix if you need the default transformation.
+
+				// Spawn Actor return a Pointer to new Actor
+				GetWorld()->SpawnActor<AActor>(new_actor_class, new_actor_transform, spawn_params);
+						]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
+</CodeSnippets>
+

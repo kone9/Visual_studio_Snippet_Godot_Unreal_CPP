@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+	<!--<Make an Actor from scratch>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title> Actor from scratch </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description> Make an Actor from scratch without Unreal Editor </Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+				////////////
+				/// in .H
+				#pragma once
+
+				#include "CoreMinimal.h"
+				#include "GameFramework/Actor.h"
+				#include "YOUR_FILE_NAME.generated.h" // For example Gun.generated.h
+				
+				UCLASS(ClassGroup=("CustomGroup"))
+				class AYOUR_CLASS_NAME : public AActor // Remember all classes that inherit from Actor must have 'A' has prefixed
+				{
+					GENERATED_BODY()
+					
+				public:
+					AYOUR_CLASS_NAME(); // If you need a constructor, defined, otherwise you may not declare it, or use explicit default constructor using = default
+					
+					virtual void BeginPlay() override; // If you want that the method cannot be overwritten in derived classes mark it as final
+					virtual void Tick(float DeltaTime) override; // If you want that the method cannot be overwritten in derived classes mark it as final
+				};
+						]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
+</CodeSnippets>
+

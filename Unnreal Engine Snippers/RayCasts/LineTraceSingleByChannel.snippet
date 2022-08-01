@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+	<!--<Line Trace Single By Channel>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Simple RayCast </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>Simple RayCast for Unreal Engine 4/5</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+				const float max_ray_distance{ 1000.0f }; // 10 meters
+				
+				const FVector ray_start{ GetOwner()->GetActorLocation() };
+				const FVector ray_end{ ray_start + (GetOwner()->GetActorForwardVector() * max_ray_distance) };
+
+				FHitResult hit{};
+				
+				FCollisionQueryParams collision_query{};
+				collision_query.AddIgnoredActor(GetOwner());
+				collision_query.bTraceComplex = true;
+				collision_query.bReturnPhysicalMaterial = true;
+				
+				if (GetWorld()->LineTraceSingleByChannel(
+					  hit
+					, rayStart
+					, rayEnd
+					, ECC_GameTraceChannel1
+					, collision_query))
+				{
+					auto* const actor = hit.GetActor();
+					//...
+				}
+						]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
+</CodeSnippets>
+

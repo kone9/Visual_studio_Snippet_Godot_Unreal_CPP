@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+	<!--<On Take Any Damage>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title> On Take Any Damage </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>Prototype methods to Listen OnTakeAnyDamage Event</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+				//.h
+				UFUNCTION(Category = Events)
+				void ListenOwnerActorTakeAnyDamage(
+					  AActor* DamagedActor
+					, float Damage
+					, const class UDamageType* DamageType
+					, class AController* InstigatedBy
+					, AActor* DamageCauser);
+					
+				//.cpp
+				// This is very common to do inside BeginPlay, but you can also use the constructor method
+				void YOURCLASS::BeginPlay()
+				{
+					Super::BeginPlay();
+				
+					GetOwner()->OnTakeAnyDamage.AddDynamic(this, &YOURCLASS::ListenOwnerActorTakeAnyDamage);
+				}
+				]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
+</CodeSnippets>
+
