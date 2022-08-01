@@ -19,7 +19,7 @@
 	void ActorBeginOverlap(class AActor* MyOverlappedActor,class AActor* OtherActor);
 	
 	//.cpp
-	//in constructor
+	//in BeginPlay
 	OnActorBeginOverlap.AddDynamic(this, &AObstacle_BoxTrigger_damage::ActorBeginOverlap);
 
 	]]>
@@ -44,7 +44,7 @@
 	void ActorEndOverlap(class AActor* MyOverlappedActor,class AActor* OtherActor);
 	
 	//.cpp
-	//in constructor
+	//in BeginPlay
 	OnActorBeginOverlap.AddDynamic(this, &AObstacle_BoxTrigger_damage::ActorEndOverlap);
 						
 						]]>

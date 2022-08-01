@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+	<!--<Box trigger helper>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>BoxTrigger DrawDebugBox Helper </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>template BoxTrigger DrawDebugBox</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+				
+	//.cpp
+	//include
+	#include "DrawDebugHelpers.h"
+	
+	//in BeginPlay
+	DrawDebugBox(GetWorld(), GetActorLocation(), GetComponentsBoundingBox().GetExtent(), FColor::Purple, true, 999, 0, 5);
+
+
+	]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+	
+	<!--<Box Component helper>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>BoxComponent DrawDebugBox Helper </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>template BoxComponent DrawDebugBox,(you need a reference to the boxComponent to use this)</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+				
+				
+	//you need a reference to the boxComponent to use this example
+	class UBoxComponent* Box;//Reference, if you have it, do not place it.
+	
+	//.cpp
+	//include
+	#include "DrawDebugHelpers.h"
+	
+	//in BeginPlay
+	if (Box == nullptr) return;
+	DrawDebugBox(GetWorld(), Box->GetComponentLocation(), Box->GetScaledBoxExtent(), FColor::Purple, true, 999, 0, 5);
+
+	]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
+
+</CodeSnippets>
+
