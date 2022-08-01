@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+	<!--<Begin play>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Begin play Unreal </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>Called when the game starts or when spawnedr</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+/// in .H
+	protected:
+	virtual void BeginPlay() override;
+	
+///.cpp
+void AEnemy::BeginPlay()
+{
+	Super::BeginPlay();
+}
+						]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+	<!--<Box trigger OnOverlapBegin>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Event Tick Unreal </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>Called every frame</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+/// in .H
+	public:	
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+	
+	//.cpp
+	void AEnemy::Tick(float DeltaTime)
+	{
+		Super::Tick(DeltaTime);
+
+	}
+						]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
+</CodeSnippets>
+
