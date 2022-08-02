@@ -29,13 +29,48 @@ public:
 	Box = CreateDefaultSubobject<UBoxComponent>(TEXT("BoxTriggerComponent"));
 
 	//in beginPlay
-	Box->OnComponentBeginOverlap.AddDynamic(this, &AEnemy::on_component_begin_overlap);
+	Box->OnComponentBeginOverlap.AddDynamic(this, &Myclass::on_component_begin_overlap);
 	///////////
 						]]>
 			</Code>
 		</Snippet>
 	</CodeSnippet>
 
+
+	<!--<Box trigger OnOverlapEnd>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>BoxComponent OnComponentBeginEND Unreal </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>template to create a trigger event with OnComponentEndOverlap an Component of type BoxComponent</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+	////////////
+/// in .H
+private:
+	UPROPERTY(EditAnywhere)
+	class UBoxComponent* Box;
+public:
+	UFUNCTION()
+		void on_component_end_overlap(class UPrimitiveComponent* OverlappedComp, AActor * OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
+////In.CPP
+
+//include in .cpp
+#include "Components/BoxComponent.h"
+
+//in constructor
+	Box = CreateDefaultSubobject<UBoxComponent>(TEXT("BoxTriggerComponent"));
+
+	//in beginPlay
+	Box->OnComponentEndOverlap.AddDynamic(this, &Myclass::on_component_end_overlap);
+	///////////
+						]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
 
 </CodeSnippets>
 
