@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+	<!--<Search Game Move Unreal>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Search Game Move Unreal </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>Code to find the game mode</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+
+		///////////////
+		/// in .H
+			private:
+			class AGameModeBase* game_mode;
+			
+		///.cpp
+			//include
+			#include "Kismet/GameplayStatics.h"
+
+			//in constructor
+			game_mode = nullptr;
+
+			#begin play
+			game_mode = UGameplayStatics::GetGameMode(GetWorld());
+
+		//////////////
+			]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+</CodeSnippets>
+
