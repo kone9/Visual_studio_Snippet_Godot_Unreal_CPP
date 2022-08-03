@@ -36,5 +36,36 @@
 		</Snippet>
 	</CodeSnippet>
 
+
+		<!--<Search Game Move Unreal>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Get a component by class </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>example of how to find a component using the reference class</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+
+		///////////////
+		/// in .H
+			private:
+			class AGameModeBase* game_mode;
+			
+		///.cpp
+
+		AActor* owner = GetOwner();
+		if (owner == nullptr) return;
+		UActorComponent* ComponentReference = Cast< UActorComponent>(GetOwner()->GetComponentByClass(UActorComponent::StaticClass())); //example of how to find a component using the reference class
+modify "UActorComponent" to the component class you are looking for
+
+		//////////////
+			]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
 </CodeSnippets>
 
