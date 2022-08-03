@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+	<!--<Search Game Move Unreal>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Redondear valor entre dos numeros </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>Usnado la función clamp redonde entre 2 valores para que no sea inferior a superior a esos valores</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+			
+		///.cpp
+			//include
+			#include "Kismet/KismetMathLibrary.h"
+
+			//begin play example
+			int valor_a_clampear = 100 + 10;//ejemplo suma
+			//int valor_a_clampear = 0 - 10;//ejemplo resta
+			int life_limit = UKismetMathLibrary::ClampInt64(Cast< valor_a_clampear + 10, 0, 100);
+
+		//////////////
+			]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+</CodeSnippets>
+
