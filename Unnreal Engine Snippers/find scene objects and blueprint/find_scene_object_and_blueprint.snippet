@@ -28,6 +28,8 @@
 			#begin play
 			game_mode = UGameplayStatics::GetGameMode(GetWorld());
 
+			Cast< AyouClassGameMode>(game_mode)->life += 10;
+
 		//////////////
 			]]>
 			</Code>
