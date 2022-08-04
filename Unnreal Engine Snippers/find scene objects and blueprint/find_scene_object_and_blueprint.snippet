@@ -81,12 +81,19 @@ modify "UActorComponent" to the component class you are looking for
 				<![CDATA[
 
 
+		//.h
+		UPROPERTY(EditAnywhere, Category = gun)
+		TSubclassOf<AActor> gun{};
+
 		///.cpp
 		//include
 		#include <Engine/World.h>
 
+		//beginPlay
+		attach_guns(gun, "SocketNameHand");
 
-		//SPAWN actor to socket name
+
+		//SPAWN actor to socket name definiton
 		void YouClass::attach_guns(TSubclassOf<AActor> gunClass, FName socketName)
 		{
 			const FTransform orientation_socket = GetMesh()->GetSocketTransform(socketName, ERelativeTransformSpace::RTS_World);
