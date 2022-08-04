@@ -67,5 +67,42 @@ modify "UActorComponent" to the component class you are looking for
 		</Snippet>
 	</CodeSnippet>
 
+
+	<!--<Attach actor compoenent Game Move Unreal>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Get a component by class </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>example of how to find a component using the reference class</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+
+
+		///.cpp
+		//include
+		#include <Engine/World.h>
+
+		
+		//SPAWN actor to socket name
+		void AMate_player_CPP::attach_guns(TSubclassOf<AActor> gunClass, FName socketName)
+		{
+			const FTransform orientation_socket = GetMesh()->GetSocketTransform(socketName, ERelativeTransformSpace::RTS_World);
+
+			AActor* newGun = GetWorld()->SpawnActor(gunClass, &orientation_socket);//FTransform por referencia constante
+			if (newGun == nullptr) return;
+			
+			newGun->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetIncludingScale, socketName);
+
+		}
+
+		//////////////
+			]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
 </CodeSnippets>
 
