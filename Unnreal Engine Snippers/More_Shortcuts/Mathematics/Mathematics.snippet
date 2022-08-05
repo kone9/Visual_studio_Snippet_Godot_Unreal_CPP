@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
 
-	<!--<Search Game Move Unreal>-->
+	<!--<redondear valor Game Move Unreal>-->
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title>Redondear valor entre dos numeros "int64" con "CLAMP" </Title>
+			<Title>Redondear valor entre dos numeros "INT 64" con "CLAMP" </Title>
 			<Author>Ariel Gimenez</Author>
-			<Description>Usanado la función clamp redonde entre 2 valores int 64 para que no sea inferior a superior a esos valores</Description>
+			<Description>Usanado la función clamp redonde entre 2 valores "INT 64" para que no sea inferior a superior a esos valores</Description>
 			<!--<Shortcut> Alt </Shortcut>-->
 		</Header>
 		<Snippet>
@@ -21,6 +21,34 @@
 			//begin play example
 			int64 valor_a_clampear = 100 + 10;//ejemplo suma
 			int life_limit = UKismetMathLibrary::ClampInt64(valor_a_clampear, 0, 100);
+
+		//////////////
+			]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
+	<!--<redondear valor Game Move Unreal>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Redondear valor entre dos numeros "FLOAT" con "CLAMP" </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>Usanado la función clamp redonde entre 2 valores FLOAT para que no sea inferior a superior a esos valores</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+		
+		/////////////
+		///.cpp
+			//include
+			#include "Kismet/KismetMathLibrary.h"
+
+			//begin play example
+			float valor_a_clampear = 100.0 + 2.5;
+			int life_limit = UKismetMathLibrary::Clamp(valor_a_clampear, 0, 100);
 
 		//////////////
 			]]>
