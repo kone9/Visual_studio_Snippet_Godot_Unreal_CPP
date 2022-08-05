@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+	<!--<Search Game Move Unreal>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Create widget blueprint </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>Crea un widget blueprint a partir de una regerencia de un widget</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+			
+		//.h
+		public:
+		UPROPERTY(EditAnywhere)
+		TSubclassOf<class UUserWidget> game_ui {};
+			
+		///.cpp
+		//include
+		#include "Blueprint/UserWidget.h"
+		#include <Engine/World.h>
+			
+		//begin play example
+		UUserWidget* new_UI = CreateWidget(GetWorld(), game_ui);
+		if (new_UI == nullptr) return;
+		new_UI->AddToViewport();
+
+		//////////////
+			]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+</CodeSnippets>
+
