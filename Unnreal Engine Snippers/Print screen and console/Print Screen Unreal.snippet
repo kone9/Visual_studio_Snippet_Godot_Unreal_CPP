@@ -99,9 +99,25 @@
 		</Snippet>
 	</CodeSnippet>
 
+	<!--<Pring FName>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Print Screen FName Unreal </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>to print messages in console concatenated of types int,float,FString  </Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[ 		FName TestName = FName("my text");
+								if (GEngine) GEngine->AddOnScreenDebugMessage( -1, 3.0f, FColor::Yellow, TEXT("My Name: %s"), *TestName.ToString());]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
 
 
-	<!--<FConcatenate>-->
+
+	<!--<OUTLOG Concatenate>-->
 	<CodeSnippet Format="1.0.0">
 		<Header>
 			<Title>Print Console Concatenate Unreal </Title>
@@ -119,21 +135,25 @@
 		</Snippet>
 	</CodeSnippet>
 
-	<!--<Pring FName>-->
+	<!--<OUTLOG FName>-->
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title>Print Screen FName Unreal </Title>
+			<Title>Print Console FText Unreal </Title>
 			<Author>Ariel Gimenez</Author>
 			<Description>to print messages in console concatenated of types int,float,FString  </Description>
 			<!--<Shortcut> Alt </Shortcut>-->
 		</Header>
 		<Snippet>
 			<Code Language="CPP">
-				<![CDATA[ 		FName TestName = FName("my text");
-								if (GEngine) GEngine->AddOnScreenDebugMessage( -1, 3.0f, FColor::Yellow, TEXT("My Name: %s"), *TestName.ToString());]]>
+				<![CDATA[ 	FText SomeText = FText::FromString("Something");
+							UE_LOG(LogTemp, Log, TEXT("SomeString: %s"), *SomeText.ToString());]]>
 			</Code>
 		</Snippet>
 	</CodeSnippet>
+
+
+
+
 
 
 
