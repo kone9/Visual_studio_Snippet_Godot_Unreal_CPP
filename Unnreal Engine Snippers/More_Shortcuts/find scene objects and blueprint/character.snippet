@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+
+	<!--<Box trigger OnOverlapBegin>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Get character movement controller </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>Get the character movement controller, from there you can access the movement properties and modify them from code,(only in class character)</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+	
+	//.cpp
+	//in BeginPlay
+	//only in class character
+	UCharacterMovementComponent* character_movement = GetCharacterMovement();
+
+	]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
+</CodeSnippets>
+
