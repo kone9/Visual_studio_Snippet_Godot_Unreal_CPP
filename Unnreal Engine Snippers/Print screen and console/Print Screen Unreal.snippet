@@ -116,7 +116,21 @@
 		</Snippet>
 	</CodeSnippet>
 
-
+	<!--<Pring Bool>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Print Screen Bool Unreal </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>To print a message in screen of type Bool in unreal engin  </Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[ 	bool my_test_bool = false;
+							if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Black, FString::Printf(TEXT("Bool: %s"), my_test_bool ? TEXT("true") : TEXT("false")));]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
 
 
 
