@@ -117,45 +117,6 @@
 
 
 
-	<!--<OUTLOG Concatenate>-->
-	<CodeSnippet Format="1.0.0">
-		<Header>
-			<Title>Print Console Concatenate Unreal </Title>
-			<Author>Ariel Gimenez</Author>
-			<Description>to print messages in console concatenated of types int,float,FString  </Description>
-			<!--<Shortcut> Alt </Shortcut>-->
-		</Header>
-		<Snippet>
-			<Code Language="CPP">
-				<![CDATA[ 	int intVar = 5;
-							float floatVar = 3.7f;
-							FString fstringVar = "an fstring variable";
-							UE_LOG(LogTemp, Warning, TEXT("Text, %d %f %s"), intVar, floatVar, *fstringVar);]]>
-			</Code>
-		</Snippet>
-	</CodeSnippet>
-
-	<!--<OUTLOG FName>-->
-	<CodeSnippet Format="1.0.0">
-		<Header>
-			<Title>Print Console FText Unreal </Title>
-			<Author>Ariel Gimenez</Author>
-			<Description>to print messages in console concatenated of types int,float,FString  </Description>
-			<!--<Shortcut> Alt </Shortcut>-->
-		</Header>
-		<Snippet>
-			<Code Language="CPP">
-				<![CDATA[ 	FText SomeText = FText::FromString("Something");
-							UE_LOG(LogTemp, Log, TEXT("SomeString: %s"), *SomeText.ToString());]]>
-			</Code>
-		</Snippet>
-	</CodeSnippet>
-
-
-
-
-
-
 
 
 </CodeSnippets>
