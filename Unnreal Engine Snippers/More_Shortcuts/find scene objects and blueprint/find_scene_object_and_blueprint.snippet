@@ -49,67 +49,20 @@
 			<Code Language="CPP">
 				<![CDATA[
 
-		///////////////
-		/// in .H
-			private:
-			class AGameModeBase* game_mode;
-			
-		///.cpp
+	///////////////
 
-		AActor* owner = GetOwner();
-		if (owner == nullptr) return;
-		UActorComponent* ComponentReference = Cast< UActorComponent>(GetOwner()->GetComponentByClass(UActorComponent::StaticClass())); //example of how to find a component using the reference class
-modify "UActorComponent" to the component class you are looking for
+	///.cpp
+	AActor* owner = GetOwner();
+	if (owner == nullptr) return;
+	UActorComponent* ComponentReference = Cast< UActorComponent>(GetOwner()->GetComponentByClass(UActorComponent::StaticClass())); //example of how to find a component using the reference class
 
-		//////////////
+	//////////////
+
 			]]>
 			</Code>
 		</Snippet>
 	</CodeSnippet>
 
-
-	<!--<Attach actor compoenent Game Move Unreal>-->
-	<CodeSnippet Format="1.0.0">
-		<Header>
-			<Title>Spawn actor and atttach to bone </Title>
-			<Author>Ariel Gimenez</Author>
-			<Description>create an object of type actor and attach it to a socket using a method</Description>
-			<!--<Shortcut> Alt </Shortcut>-->
-		</Header>
-		<Snippet>
-			<Code Language="CPP">
-				<![CDATA[
-
-
-		//.h
-		UPROPERTY(EditAnywhere, Category = gun)
-		TSubclassOf<AActor> gun{};
-
-		///.cpp
-		//include
-		#include <Engine/World.h>
-
-		//beginPlay
-		attach_guns(gun, "SocketNameHand");
-
-
-		//SPAWN actor to socket name definiton
-		void YouClass::attach_guns(TSubclassOf<AActor> gunClass, FName socketName)
-		{
-			const FTransform orientation_socket = GetMesh()->GetSocketTransform(socketName, ERelativeTransformSpace::RTS_World);
-
-			AActor* newGun = GetWorld()->SpawnActor(gunClass, &orientation_socket);//FTransform por referencia constante
-			if (newGun == nullptr) return;
-			
-			newGun->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetIncludingScale, socketName);
-
-		}
-
-		//////////////
-			]]>
-			</Code>
-		</Snippet>
-	</CodeSnippet>
 
 </CodeSnippets>
 
