@@ -119,6 +119,23 @@
 		</Snippet>
 	</CodeSnippet>
 
+	<!--<Pring FName>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Print Screen FName Unreal </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>to print messages in console concatenated of types int,float,FString  </Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[ 		FName TestName = FName("my text");
+								if (GEngine) GEngine->AddOnScreenDebugMessage( -1, 3.0f, FColor::Yellow, TEXT("My Name: %s"), *TestName.ToString());]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
 
 
 </CodeSnippets>
