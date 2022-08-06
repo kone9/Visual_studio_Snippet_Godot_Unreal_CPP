@@ -3,8 +3,10 @@
     "",
     "\\Unnreal Engine Snippers",
     "\\Unnreal Engine Snippers\\More_Shortcuts",
+    "\\Unnreal Engine Snippers\\More_Shortcuts\\Events\\ActorsEvents",
+    "\\Unnreal Engine Snippers\\More_Shortcuts\\find scene objects and blueprint",
     "\\Unnreal Engine Snippers\\More_Shortcuts\\Mathematics"
   ],
-  "SelectedNode": "\\Unnreal Engine Snippers\\More_Shortcuts\\Mathematics\\Mathematics.snippet",
+  "SelectedNode": "\\Unnreal Engine Snippers\\More_Shortcuts\\find scene objects and blueprint\\find_scene_object_and_blueprint.snippet",
   "PreviewInSolutionExplorer": false
 }

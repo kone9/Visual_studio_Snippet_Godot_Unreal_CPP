@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+	<!--<Box trigger OnOverlapBegin>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Search anim instance, "blueprint animation" </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>Gets the animation blueprint that is inside the mesh and works with the skeletan mesh class. (if you are not inside the character class where you can access the mesh, you will have to import the library)</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+////////////				
+	//.h	
+	private:
+	class UAnimInstance* blueprintAnimation {nullptr};//init nullptr
+	
+	//.cpp
+	//#include "Animation/AnimInstance.h" /*Only if you are not in character class and you cannot access*/
+	
+	
+	//in BeginPlay
+	blueprintAnimation = GetMesh()->GetAnimInstance();
+	
+	//usage example
+	if (blueprintAnimation == nullptr) return;
+	blueprintAnimation->Montage_IsActive(myMontage);you need a montage for this to work
+
+////////////
+	]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
+</CodeSnippets>
+
