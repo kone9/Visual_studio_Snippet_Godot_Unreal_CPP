@@ -3,10 +3,11 @@
     "",
     "\\Unnreal Engine Snippers",
     "\\Unnreal Engine Snippers\\More_Shortcuts",
+    "\\Unnreal Engine Snippers\\More_Shortcuts\\animations",
     "\\Unnreal Engine Snippers\\More_Shortcuts\\Events\\ActorsEvents",
-    "\\Unnreal Engine Snippers\\More_Shortcuts\\find scene objects and blueprint",
-    "\\Unnreal Engine Snippers\\More_Shortcuts\\Mathematics"
+    "\\Unnreal Engine Snippers\\Print Screen and Console",
+    "\\Unnreal Engine Snippers\\Print Screen and Console\\Console Log"
   ],
-  "SelectedNode": "\\Unnreal Engine Snippers\\More_Shortcuts\\find scene objects and blueprint\\find_scene_object_and_blueprint.snippet",
+  "SelectedNode": "\\Unnreal Engine Snippers\\Print Screen and Console\\Print Screen Unreal.snippet",
   "PreviewInSolutionExplorer": false
 }
