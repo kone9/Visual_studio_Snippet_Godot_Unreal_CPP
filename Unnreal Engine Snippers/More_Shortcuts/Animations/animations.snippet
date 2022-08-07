@@ -4,7 +4,7 @@
 	<!--<Play montage>-->
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title> Play Montage </Title>
+			<Title> Play Montage in character </Title>
 			<Author>Ariel Gimenez</Author>
 			<Description>to run a montage, note that the montage needs a slot and the slot has to be called in the anim blueprint for it to work</Description>
 			<!--<Shortcut> Alt </Shortcut>-->
@@ -23,6 +23,36 @@
 				//Beginplay example
 				if (my_montage == nullptr) return;//si hay un montage
 				PlayAnimMontage(my_montage);
+				
+				]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
+	<!--<Play UAnimationAsset>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title> Play Animation in character </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>play an animation, keep in mind that the default animations are from the UAnimationAsset class</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+				
+				//.H
+				UPROPERTY(EditAnywhere, BlueprintReadOnly)
+				class UAnimationAsset* my_animation; //load the montage from the editor
+				
+				//.CPP
+				
+				//Beginplay example
+				USkeletalMeshComponent* mesh_character = GetMesh();
+				if (mesh_character == nullptr) return;//si hay un montage
+				mesh_character->PlayAnimation(damage_animation);
+				
 				
 				]]>
 			</Code>
