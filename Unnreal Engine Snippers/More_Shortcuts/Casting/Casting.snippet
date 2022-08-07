@@ -4,31 +4,22 @@
 	<!--<Cast Fstring to Fname>-->
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title> Play Montage </Title>
+			<Title> Cast Fstring to Fname</Title>
 			<Author>Ariel Gimenez</Author>
-			<Description>to run a montage, note that the montage needs a slot and the slot has to be called in the anim blueprint for it to work</Description>
+			<Description>Example of how to cast an FString on an FName</Description>
 			<!--<Shortcut> Alt </Shortcut>-->
 		</Header>
 		<Snippet>
 			<Code Language="CPP">
 				<![CDATA[
 				
-				//.H
-				UPROPERTY(EditAnywhere, BlueprintReadOnly)
-				class UAnimMontage* Attack_montage; //load the montage from the editor
-				
-				//.CPP
-				//#include #include "Animation/AnimMontage.h" //If you are not in the character class you may have to import the library
-				
-				//Beginplay example
-				if (Attack_montage == nullptr) return;//si hay un montage
-				PlayAnimMontage(Attack_montage);
+				FString TheFString = "Yippee!";
+				FName myConveredFString = FName(*TheFString);
 				
 				]]>
 			</Code>
 		</Snippet>
 	</CodeSnippet>
-
 
 </CodeSnippets>
 
