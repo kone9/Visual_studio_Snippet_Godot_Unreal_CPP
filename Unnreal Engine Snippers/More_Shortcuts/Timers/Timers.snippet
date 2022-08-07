@@ -16,22 +16,20 @@
 /// in .H
 	FTimerHandle timer_handle;
 	UPROPERTY(EditAnywhere)
-	float timer_to_end;
+	float timer_to_end { 1.0f };
 	UPROPERTY(EditAnywhere)
-	bool repeat_timer
-	
+	bool repeat_timer { false };
+
 	UFUNCTION()
 	void OnTimerOut();
 	
 	////In.CPP
 	//include in .cpp
-#include <Engine/World.h>
+	#include <Engine/World.h>
 
-	//in constructor
-	timer_to_end = 1.0f;
-	repeat_timer = false;
-	//in beginPlay
-	GetWorld()->GetTimerManager().SetTimer(TriggerDestroyTimerHandle, this, &MyClass::TriggerDestroy, time_to_end, true);
+	//in beginPlay example
+	if (GetWorld() == nullptr) return;
+	GetWorld()->GetTimerManager().SetTimer(timer_handle, this, &MyClass::OnTimerOut, timer_to_end, repeat_timer);
 
 	///////////
 						]]>
