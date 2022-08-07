@@ -4,18 +4,31 @@
 	<!--<On Take Any Damage>-->
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title> Cast Fstring to Fname</Title>
+			<Title> On Take Any Damage </Title>
 			<Author>Ariel Gimenez</Author>
-			<Description>Example of how to cast an FString on an FName</Description>
+			<Description>Prototype methods to Listen OnTakeAnyDamage Event</Description>
 			<!--<Shortcut> Alt </Shortcut>-->
 		</Header>
 		<Snippet>
 			<Code Language="CPP">
 				<![CDATA[
+				//.h
+				UFUNCTION(Category = Events)
+				void ListenOwnerActorTakeAnyDamage(
+					  AActor* DamagedActor
+					, float Damage
+					, const class UDamageType* DamageType
+					, class AController* InstigatedBy
+					, AActor* DamageCauser);
+					
+				//.cpp
+				// This is very common to do inside BeginPlay, but you can also use the constructor method
+				void YOURCLASS::BeginPlay()
+				{
+					Super::BeginPlay();
 				
-				FString TheFString = "Yippee!";
-				FName myConveredFString = FName(*TheFString);
-				
+					GetOwner()->OnTakeAnyDamage.AddDynamic(this, &YOURCLASS::ListenOwnerActorTakeAnyDamage);
+				}
 				]]>
 			</Code>
 		</Snippet>
