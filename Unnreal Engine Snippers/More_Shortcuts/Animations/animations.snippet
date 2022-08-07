@@ -15,14 +15,14 @@
 				
 				//.H
 				UPROPERTY(EditAnywhere, BlueprintReadOnly)
-				class UAnimMontage* Attack_montage; //load the montage from the editor
+				class UAnimMontage* my_montage; //load the montage from the editor
 				
 				//.CPP
 				//#include #include "Animation/AnimMontage.h" //If you are not in the character class you may have to import the library
 				
 				//Beginplay example
-				if (Attack_montage == nullptr) return;//si hay un montage
-				PlayAnimMontage(Attack_montage);
+				if (my_montage == nullptr) return;//si hay un montage
+				PlayAnimMontage(my_montage);
 				
 				]]>
 			</Code>
