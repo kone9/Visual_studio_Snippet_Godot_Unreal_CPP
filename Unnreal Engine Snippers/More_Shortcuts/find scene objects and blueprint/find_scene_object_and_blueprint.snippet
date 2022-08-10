@@ -119,6 +119,38 @@
 	</CodeSnippet>
 
 
+	<!--<Get all child actors in world outliner>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Get all child actors in world outliner</Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>gets the child objects of this actor that are in the world outliner, stores them in a Tarray, and then iterates through it to do whatever you want with those child actors. If he doesn't have child actors, he doesn't do anything.</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+
+	///////////////
+	
+	TArray<AActor*> object_child_world_outliner{};
+	GetAttachedActors(object_child_world_outliner);// for reference and you need an Aactor to access this method
+	
+	for (AActor* actor_attach : object_child_world_outliner)
+	{
+		if (actor_attach == nullptr) return;
+		actor_attach->Destroy();//example destroy
+	}
+
+
+	//////////////
+
+			]]>s
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
 
 
 </CodeSnippets>
