@@ -119,7 +119,7 @@
 			new_actor_transform.SetRotation(GetActorRotation().Quaternion());
 
 			// Spawn Actor return a Pointer to new Actor
-			AActor* newProyectil = GetWorld()->SpawnActor<AActor>(magic_proyectil, new_actor_transform, spawn_params);
+			AActor* newProyectil = GetWorld()->SpawnActor<AActor>(proyectil_class, new_actor_transform, spawn_params);
 	
 			return newProyectil;
 		}
