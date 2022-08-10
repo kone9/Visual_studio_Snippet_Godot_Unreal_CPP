@@ -49,26 +49,27 @@
 
 		//.h
 		UPROPERTY(EditAnywhere, Category = gun)
-		TSubclassOf<AActor> gun{};
+		TSubclassOf<AActor> actor_to_attach{};
 
 		///.cpp
 		//include
 		#include <Engine/World.h>
 
 		//beginPlay
-		attach_guns(gun, "SocketNameHand");
+		attach_guns(actor_to_attach, "SocketNameHand");
 
 
-		//SPAWN actor to socket name definiton
-		void YouClass::attach_guns(TSubclassOf<AActor> gunClass, FName socketName)
+		//Attach effect in bone
+		AActor* AEnemy::attach_ice_effect(TSubclassOf<AActor> effectClass, FName socketName)
 		{
 			const FTransform orientation_socket = GetMesh()->GetSocketTransform(socketName, ERelativeTransformSpace::RTS_World);
 
-			AActor* newGun = GetWorld()->SpawnActor(gunClass, &orientation_socket);//FTransform por referencia constante
-			if (newGun == nullptr) return;
-			
-			newGun->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetIncludingScale, socketName);
+			AActor* newEffect = GetWorld()->SpawnActor(effectClass, &orientation_socket);//FTransform por referencia constante
+			if (newEffect == nullptr) return nullptr;
 
+			newEffect->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetIncludingScale, socketName);
+
+			return newEffect;
 		}
 
 		//////////////

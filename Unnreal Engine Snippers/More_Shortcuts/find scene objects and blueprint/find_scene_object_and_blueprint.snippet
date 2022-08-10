@@ -91,6 +91,34 @@
 	</CodeSnippet>
 
 
+	<!--<Search parent actor from compoenent>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Get parent actor of this component </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>To access the actor from a child component,(you need to have a pointer to a component in order to do this)</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+
+	///////////////
+
+	///.cpp
+	
+	UPrimitiveComponent* OtherComp = nullptr; //add to this pointer your component
+	if (OtherComp == nullptr) return;
+	AActor* parent_actor = OtherComp->GetOwner();
+
+	//////////////
+
+			]]>s
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
 
 
 </CodeSnippets>
