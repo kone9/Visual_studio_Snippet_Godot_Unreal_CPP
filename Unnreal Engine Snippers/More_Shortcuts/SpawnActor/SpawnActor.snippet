@@ -104,8 +104,8 @@
 			///////////////
 			//.CPP
 			//#include <Engine/World.h> // Don't forget to include World.h to use methods inside UWorld Class
-			if (GetWorld() == nullptr) return;
-			if (proyectil_class == nullptr) return;
+			if (GetWorld() == nullptr) return nullptr;
+			if (proyectil_class == nullptr) return nullptr;
 
 			FActorSpawnParameters spawn_params{};
 			spawn_params.Owner = nullptr; // Specify owner actor for this new actor if you need one.
