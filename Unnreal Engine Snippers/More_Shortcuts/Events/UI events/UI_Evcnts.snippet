@@ -56,6 +56,41 @@
 		</Snippet>
 	</CodeSnippet>
 
+	
+		<!--<NativeTick>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>On Clicked Button Widget UUserWidget</Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>Click Button event, keep in mind that it is necessary to create a button for this, see the UI section how to create a UButton</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+	//.h		
+	public:
+	UPROPERTY(meta = (BindWidget))
+	class UButton* my_button{ nullptr};//create a "Button" with the same as this variable name inside blueprint widget
+	
+	UFUNCTION()
+	void On_Clicked();
+	
+	//.Cpp
+	#include "Components/Button.h" 
+	
+	//Example NativeConstruct
+	my_button->OnClicked.AddDynamic(this, &You_class::On_Clicked);
+		
+	void You_class::On_Clicked()
+	{
+		if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Yellow, TEXT("printing a message from the button but from C++"));
+	}
+			
+						]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
 
 
 </CodeSnippets>
