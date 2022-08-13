@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+
+	<!--<Begin Play of UI>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Event Begin Play of UI </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>Create the Native construct which works like a "begin play" of an actor, but it's not a begin play, but a special UI method to fetch objects when you start the game.</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+				
+	//.h	
+	protected:
+		void NativeConstruct() override;
+	
+	//.cpp
+	void You_class::NativeConstruct()
+	{
+		Super::NativeConstruct();
+	}
+
+	]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+	<!--<NativeTick>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Event Tick of UI </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>Template for tick events that is called 60 times per second but in UI</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+	//.h		
+	Protected:
+		void NativeTick(const FGeometry& MyGeometry, float InDeltaTime) override;
+	
+	//.cpp
+	void You_class::NativeTick(const FGeometry& MyGeometry, float InDeltaTime)
+	{
+		Super::NativeTick(MyGeometry,InDeltaTime);
+
+	}
+	
+						]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
+
+</CodeSnippets>
+
