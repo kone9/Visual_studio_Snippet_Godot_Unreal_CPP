@@ -15,7 +15,7 @@
 		/////////////
 		//.h
 		public:
-		UPROPERTY(EditAnywhere)
+		UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 		TSubclassOf<class UUserWidget> game_ui {};
 			
 		///.cpp
@@ -49,7 +49,7 @@
 		/////////////
 		//.h
 		public:
-		UPROPERTY(meta = (BindWidget))
+		UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 		class UProgressBar* lifeBar { nullptr };
 			
 		///.cpp
@@ -80,7 +80,7 @@
 		/////////////
 		//.h
 		public:
-		UPROPERTY(meta = (BindWidget))
+		UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 		class UProgressBar* lifeBar { nullptr };//create a "ProgressBar" with the same as this variable name inside blueprint widget
 			
 		///.cpp
@@ -111,7 +111,7 @@
 		/////////////
 		//.h
 		public:
-		UPROPERTY(meta = (BindWidget))
+		UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 		class UTextBlock* info_text{ nullptr};//create a "TextBlock" with the same as this variable name inside blueprint widget
 			
 		///.cpp
@@ -141,7 +141,7 @@
 		/////////////
 		//.h
 		public:
-		UPROPERTY(meta = (BindWidget))
+		UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 		class UButton* my_button{ nullptr};//create a "Button" with the same as this variable name inside blueprint widget
 			
 		///.cpp
