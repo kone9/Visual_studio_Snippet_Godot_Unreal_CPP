@@ -4,7 +4,7 @@
 	<!--<Search Game Move Unreal>-->
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title>Search Game Move Unreal </Title>
+			<Title>Get Game Move Unreal </Title>
 			<Author>Ariel Gimenez</Author>
 			<Description>Code to find the game mode</Description>
 			<!--<Shortcut> Alt </Shortcut>-->
@@ -55,6 +55,44 @@
 	AActor* owner = GetOwner();
 	if (owner == nullptr) return;
 	UActorComponent* ComponentReference = Cast< UActorComponent>(GetOwner()->GetComponentByClass(UActorComponent::StaticClass())); //example of how to find a component using the reference class
+
+	//////////////
+
+			]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
+	<!--<Get Actor With TAG Unreal>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Get Actor with tag </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>example of how to find a Actor with tag </Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+
+	///////////////
+	
+	///.cpp
+	//include
+	#include <Kismet/GameplayStatics.h>
+	
+	//Begin play example
+	//search and get actor with tag
+	TArray<AActor*> actor_with_tag{};
+	FName tag_actor = TEXT("actor_tag");// add tag actor here
+	UGameplayStatics::GetAllActorsWithTag(GetWorld(), tag_actor, actor_with_tag);
+	AActor* actor = actor_with_tag[0];
+	
+	//Use
+	if (actor == nullptr) return;
+	FString new_text_print_concatenate = "Name of Actor is: " + actor->GetActorLabel();
+	if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Yellow, *new_text_print_concatenate);
 
 	//////////////
 
