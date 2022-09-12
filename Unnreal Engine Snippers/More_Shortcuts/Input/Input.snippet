@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+	<!--<Input Bind Axis>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title> Input Bind Axis</Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>
+				Bind Axis, is usually used to move a character or something where you need a value between 1 and -1 with the input.
+				You have to need the method "SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)" which is usually found in the character class
+			</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+				
+				void YouClass::you_function(float Value);
+				
+				PlayerInputComponent->BindAxis("MoveForward", this, &YouClass::you_function);
+				
+				
+				]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
+
+	<!--<Input Bind Axis>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title> Input Bind Action</Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>
+				BindAction It is usually used for when you press a button.
+				You have to need the method "SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)" which is usually found in the character class
+			</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+				
+				void YouClass::you_function(float Value);
+				
+				PlayerInputComponent->BindAction( "Jump", IE_Pressed, this, &YouClass::youFuction );
+
+				
+				
+				]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
+
