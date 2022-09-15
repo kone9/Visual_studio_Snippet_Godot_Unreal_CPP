@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+	<!--<Crear USceneComponent>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title> Crear USceneComponent</Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>
+				El USceneComponent se suele utilizar para que sea  el root de un blueprint y con esto evitar conflictos a la hora de crear varios componentes desde C++
+				para evitar conflictos de visualización en el editor importante que sea VISIBLEANYWHERE
+			</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+				
+				//in.H
+				public:
+					UPROPERTY(VisibleAnywhere)
+					USceneComponent* Root{ nullptr };
+				
+				//in .CPP
+				//Constructor
+				Root = CreateDefaultSubobject<USceneComponent>(TEXT("root"));
+				RootComponent = Root;
+				
+				
+				]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+	<!--<Crear USceneComponent>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title> Crear UBoxComponent</Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>
+				El UBoxComponent es una caja transparente que se suele utilizar para lanzar eventos cuando dos cuerpos se interceptan
+				para evitar conflictos de visualización en el editor importante que sea VISIBLEANYWHERE
+			</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+				
+				//in.H
+				public:
+					UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+					class UBoxComponent* box_trigger_dead;
+				
+				//in .CPP
+				#include "Components/BoxComponent.h"
+				
+				//Constructor
+				box_trigger_dead = CreateDefaultSubobject<UBoxComponent>(TEXT("box_trigger_dead"));
+				box_trigger_dead->SetBoxExtent(FVector(64, 64, 64));
+				box_trigger_dead->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
+				
+				
+				]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
+	<!--<Crear USceneComponent>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title> Crear UStaticMeshComponent</Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>
+				El UStaticMeshComponent es un objeto que se suele utilizar para renderizar objetos, tambien tiene propiedades físicas y de colisiones
+				para evitar conflictos de visualización en el editor importante que sea VISIBLEANYWHERE
+			</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+				
+				//in.H
+				public:
+					UPROPERTY(VisibleAnywhere,BlueprintReadWrite)
+					class UStaticMeshComponent* mesh_Bird{ nullptr };
+				
+				//in .CPP
+				#include "Components/StaticMeshComponent.h"
+				
+				//Constructor
+				mesh_Bird = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("mesh_Bird"));
+				mesh_Bird->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
+				
+				
+				]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+	
+</CodeSnippets>
+

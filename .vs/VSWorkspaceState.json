@@ -3,13 +3,12 @@
     "",
     "\\Unnreal Engine Snippers",
     "\\Unnreal Engine Snippers\\More_Shortcuts",
-    "\\Unnreal Engine Snippers\\More_Shortcuts\\Events",
+    "\\Unnreal Engine Snippers\\More_Shortcuts\\Casting",
     "\\Unnreal Engine Snippers\\More_Shortcuts\\Events\\UI events",
-    "\\Unnreal Engine Snippers\\More_Shortcuts\\find scene objects and blueprint",
-    "\\Unnreal Engine Snippers\\More_Shortcuts\\UI",
+    "\\Unnreal Engine Snippers\\More_Shortcuts\\Input",
     "\\Unnreal Engine Snippers\\Print Screen and Console",
     "\\Unnreal Engine Snippers\\Print Screen and Console\\Console Log"
   ],
-  "SelectedNode": "\\Unnreal Engine Snippers\\More_Shortcuts\\find scene objects and blueprint\\find_scene_object_and_blueprint.snippet",
+  "SelectedNode": "\\Unnreal Engine Snippers\\More_Shortcuts\\Input\\Input.snippet",
   "PreviewInSolutionExplorer": false
 }
