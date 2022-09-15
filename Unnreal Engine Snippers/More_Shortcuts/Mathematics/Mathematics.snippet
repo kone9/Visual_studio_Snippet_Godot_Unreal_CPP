@@ -56,5 +56,36 @@
 		</Snippet>
 	</CodeSnippet>
 
+
+	<!--<redondear valor Game Move Unreal>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title> Random Float In Range </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>
+				random value between 2 floats with a minimum and maximum range
+			</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+		
+		/////////////
+		///.cpp
+			//include
+			#include "Kismet/KismetMathLibrary.h"
+
+			//begin play example
+			float minimum_z = 10;
+			float maximum_z = 100;
+			float randon_value = UKismetMathLibrary::RandomFloatInRange(minimum_z, maximum_z)
+
+		//////////////
+			]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
 </CodeSnippets>
 
