@@ -24,6 +24,7 @@
 				//Constructor
 				Root = CreateDefaultSubobject<USceneComponent>(TEXT("root"));
 				RootComponent = Root;
+				box_trigger_point->SetupAttachment(RootComponent);//sino agregas esto no vas a ver las propiedades de transform position scale
 				
 				
 				]]>
@@ -56,7 +57,8 @@
 				//Constructor
 				box_trigger_dead = CreateDefaultSubobject<UBoxComponent>(TEXT("box_trigger_dead"));
 				box_trigger_dead->SetBoxExtent(FVector(64, 64, 64));
-				box_trigger_dead->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
+				box_trigger_dead->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
+				box_trigger_dead->SetupAttachment(RootComponent);//sino agregas esto no vas a ver las propiedades de transform position scale
 				
 				
 				]]>
@@ -89,8 +91,8 @@
 				
 				//Constructor
 				mesh_Bird = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("mesh_Bird"));
-				mesh_Bird->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
-				
+				mesh_Bird->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
+				mesh_Bird->SetupAttachment(RootComponent);//sino agregas esto no vas a ver las propiedades de transform position scale
 				
 				]]>
 			</Code>

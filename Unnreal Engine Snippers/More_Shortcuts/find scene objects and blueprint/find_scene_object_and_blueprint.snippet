@@ -18,20 +18,15 @@
 
 		///////////////
 		/// in .H
-			private:
-			class AGameModeBase* game_mode{nullptr};
 			
+			private:
+			class AGameModeBase* game_mode{ nullptr };
+
 			public:
-				FTimerHandle timer_handle;
+			FTimerHandle timer_handle_search_game_mode;
 
-				UPROPERTY(EditAnywhere)
-					float timer_to_end{ 0.1 };
-
-				UPROPERTY(EditAnywhere)
-					bool repeat_timer{ false };
-
-				UFUNCTION()
-				void OnTimerOut();
+			UFUNCTION()
+			void OnTimerOut_search_game_mode();
 				
 			
 			
@@ -46,10 +41,11 @@
 
 			//begin play		
 			if (GetWorld() == nullptr) return;
-			GetWorld()->GetTimerManager().SetTimer(timer_handle, this, &YouClass::OnTimerOut, timer_to_end, repeat_timer);
+			GetWorld()->GetTimerManager().SetTimer(timer_handle_search_game_mode, this, &ABird_pawn::OnTimerOut_search_game_mode, 0.1, false);
+			
 			
 			//get game mode after 1 second
-			void AColumns::OnTimerOut()
+			void AColumns::OnTimerOut_search_game_mode()
 			{
 				//game_mode = UGameplayStatics::GetGameMode( GetWorld() );
 				if (GetWorld()->GetAuthGameMode() == nullptr)
