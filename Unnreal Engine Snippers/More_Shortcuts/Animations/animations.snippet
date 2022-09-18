@@ -60,6 +60,46 @@
 	</CodeSnippet>
 
 
+	<!--<Play ALevelSequenceActor>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title> Play level sequencer </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description> load a level sequencer and run the animation</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+				
+				//.H
+				UPROPERTY(EditAnywhere, BlueprintReadOnly)
+				class ALevelSequenceActor* my_level_Sequencer; //load the level_Sequencer from editor
+				
+				//.CPP
+				#include <LevelSequenceActor.h>
+				#include <LevelSequencePlayer.h>
+				#include <MovieSceneSequencePlayer.h>
+				
+				//Beginplay example
+				if (Sequencer_end_animation == nullptr) return;
+				Sequencer_end_animation->SequencePlayer->Play();
+				
+				
+				//INSIDE FILE projectname.build.cs
+				//you have to add the following lines of code ( "LevelSequence", "MovieScene" ) so you can use the level sequencer from C++
+				//Example
+				PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine","LevelSequence", "MovieScene" });
+				
+				
+				]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+	
+
+
 
 </CodeSnippets>
 
