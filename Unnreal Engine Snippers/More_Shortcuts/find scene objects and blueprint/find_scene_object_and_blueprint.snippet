@@ -153,7 +153,11 @@
 	TArray<AActor*> actor_with_tag{};
 	FName tag_actor = TEXT("actor_tag");// add tag actor here
 	UGameplayStatics::GetAllActorsWithTag(GetWorld(), tag_actor, actor_with_tag);
-	AActor* actor = actor_with_tag[0];
+	if (actor_with_tag.Num() > 0)//only if there are elements inside the array I look for it by index
+	{
+		AActor* actor = actor_with_tag[0];
+	}
+	
 	
 	//Use
 	if (actor == nullptr) return;
