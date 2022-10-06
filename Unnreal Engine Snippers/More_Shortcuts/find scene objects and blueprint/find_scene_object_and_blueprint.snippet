@@ -284,5 +284,45 @@
 	</CodeSnippet>
 
 
+	<!--< Obtener un actor AAmbientSound en escena con tag y darle play>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Get actor AAmbientSound with tag</Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>Get actor AAmbientSound with tag in scene and play component audio</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+			
+			//.h
+			UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+			class AAmbientSound* music_nivel{ nullptr };
+			
+			//.Cpp Example
+			#include "Components/AudioComponent.h"
+			#include "Sound/AmbientSound.h"
+			
+			//example begin play
+			//search level music
+			TArray<AActor*> actor_with_tag{};
+			FName tag_actor = TEXT("music_nivel");// add tag actor here
+			UGameplayStatics::GetAllActorsWithTag(GetWorld(), tag_actor, actor_with_tag);
+			if (actor_with_tag.Num() > 0)//only if there are elements inside the array I look for it by index
+			{
+				music_nivel = Cast<AAmbientSound>( actor_with_tag[0] );
+			}
+			
+			//play 
+			if (music_nivel->GetAudioComponent() == nullptr) return;
+			music_nivel->GetAudioComponent()->Play();
+	
+	
+			]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
 </CodeSnippets>
 
