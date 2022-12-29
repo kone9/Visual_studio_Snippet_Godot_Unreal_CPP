@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+
+  
+	<!--<Box trigger OnOverlapBegin>-->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Quit game </Title>
+			<Author>Ariel Gimenez</Author>
+			<Description>Example of how to exit the game c++</Description>
+			<!--<Shortcut> Alt </Shortcut>-->
+		</Header>
+		<Snippet>
+			<Code Language="CPP">
+				<![CDATA[
+				
+	//.cpp
+	#include "Kismet/KismetSystemLibrary.h"
+  #include <Engine/World.h>
+  
+  //example begin play
+  if (GetWorld() == nullptr) return;
+	APlayerController* SpecificPlayer = GetWorld()->GetFirstPlayerController();
+  if (SpecificPlayer == nullptr) return;
+	UKismetSystemLibrary::QuitGame(GetWorld(), SpecificPlayer, EQuitPreference::Quit, true);
+
+	]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+
+
+
+</CodeSnippets>
+

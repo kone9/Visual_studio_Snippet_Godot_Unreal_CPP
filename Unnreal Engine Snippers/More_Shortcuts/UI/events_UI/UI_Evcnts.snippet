@@ -21,7 +21,7 @@
 	//.cpp
 	void You_class::NativeConstruct()
 	{
-		Super::NativeConstruct();
+			Super::NativeConstruct();
 	}
 
 	]]>
@@ -47,7 +47,7 @@
 	//.cpp
 	void You_class::NativeTick(const FGeometry& MyGeometry, float InDeltaTime)
 	{
-		Super::NativeTick(MyGeometry,InDeltaTime);
+			Super::NativeTick(MyGeometry,InDeltaTime);
 
 	}
 	
@@ -57,7 +57,7 @@
 	</CodeSnippet>
 
 	
-		<!--<NativeTick>-->
+		<!--<Clicked Button Widget UUserWidge>-->
 	<CodeSnippet Format="1.0.0">
 		<Header>
 			<Title>On Clicked Button Widget UUserWidget</Title>
@@ -68,24 +68,24 @@
 		<Snippet>
 			<Code Language="CPP">
 				<![CDATA[
-	//.h		
-	public:
-	UPROPERTY(meta = (BindWidget))
-	class UButton* my_button{ nullptr};//create a "Button" with the same as this variable name inside blueprint widget
+			//.h		
+			public:
+			UPROPERTY(meta = (BindWidget))
+			class UButton* my_button{ nullptr};//create a "Button" with the same as this variable name inside blueprint widget
 	
-	UFUNCTION()
-	void On_Clicked();
+			UFUNCTION()
+			void On_Clicked();
 	
-	//.Cpp
-	#include "Components/Button.h" 
+			//.Cpp
+			#include "Components/Button.h" 
 	
-	//Example NativeConstruct
-	my_button->OnClicked.AddDynamic(this, &You_class::On_Clicked);
+			//Example NativeConstruct
+			my_button->OnClicked.AddDynamic(this, &You_class::On_Clicked);
 		
-	void You_class::On_Clicked()
-	{
-		if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Yellow, TEXT("printing a message from the button but from C++"));
-	}
+			void You_class::On_Clicked()
+			{
+				if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Yellow, TEXT("printing a message from the button but from C++"));
+			}
 			
 						]]>
 			</Code>
