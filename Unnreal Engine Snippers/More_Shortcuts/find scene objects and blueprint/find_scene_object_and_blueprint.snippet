@@ -324,5 +324,42 @@
 		</Snippet>
 	</CodeSnippet>
 
+
+  <!--<Obtener el un widget>-->
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Event Tick of UI </Title>
+      <Author>Ariel Gimenez</Author>
+      <Description>Template for tick events that is called 60 times per second but in UI</Description>
+      <!--<Shortcut> Alt </Shortcut>-->
+    </Header>
+    <Snippet>
+      <Code Language="CPP">
+        <![CDATA[
+	//.h
+  public:
+	UPROPERTY(EditAnywhere,BlueprintReadWrite)
+	TSubclassOf<class UUserWidget> Menu_inicio{};
+	
+	//.cpp
+  #include "Blueprint/WidgetBlueprintLibrary.h"
+  #include "Blueprint/UserWidget.h"
+  
+  //begin play example
+	TArray<UUserWidget*> object_child_world_outliner{};
+	UWidgetBlueprintLibrary::GetAllWidgetsOfClass(GetWorld(), object_child_world_outliner, Menu_inicio);
+
+	for (UUserWidget* actor_attach : object_child_world_outliner)
+	{
+		if (actor_attach == nullptr) return;
+		actor_attach->SetVisibility(ESlateVisibility::Hidden);//oculto el widget
+	}
+	
+						]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+
+
 </CodeSnippets>
 
