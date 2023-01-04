@@ -106,26 +106,24 @@
 			//.h		
 			public:
 				UPROPERTY(BlueprintReadWrite)//call from editor
-				UWidgetAnimation* ref_animation_buton_info{ nullptr };//get animation from C++
+				UWidgetAnimation* ref_animation_buton {nullptr};//get animation from C++
 
-				FWidgetAnimationDynamicEvent to_end_animation_button_info_delegate; //delegate to function
+				FWidgetAnimationDynamicEvent to_end_animation_button_delegate; //delegate to function
 
 				UFUNCTION()
-				void to_end_animation_button_info();//function
+				void to_end_animation_button();//function
 	
 			//.Cpp
 			//Example NativeConstruct
-				to_end_animation_button_info_delegate.BindDynamic(this, &UMenuInitWiget::to_end_animation_button_info);
+				to_end_animation_button_delegate.BindDynamic(this, &UMenuInitWiget::to_end_animation_button);
 				if (ref_animation_buton_info == nullptr) return;
-				BindToAnimationFinished(ref_animation_buton_info, to_end_animation_button_info_delegate);
-        
-        void UMenuInitWiget::to_end_animation_button_info()
-        {
+				BindToAnimationFinished(ref_animation_buton, to_end_animation_button_delegate);
+
+				void UYouClass::to_end_animation_button()
+				{
 					if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Yellow, TEXT("end UWidgetAnimation"));
-        }
-			
-      //in blueprint
-      // in event pre construct set ref_animation_buton_info
+				}
+
 			
 						]]>
       </Code>
