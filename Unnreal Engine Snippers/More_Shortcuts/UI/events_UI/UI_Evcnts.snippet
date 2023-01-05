@@ -142,26 +142,26 @@
     <Snippet>
       <Code Language="CPP">
         <![CDATA[
-		//.h
-		public:
-			UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
-			class USlider* potenciador_slider{ nullptr };
+			//.h
+			public:
+				UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+				class USlider* new_slider{ nullptr };
 
-			UFUNCTION()
-			void On_Slider_Change(float value);
+				UFUNCTION()
+				void On_Slider_Change(float value);
 
-		//.cpp
-			#include <Components/Slider.h>
+			//.cpp
+				#include <Components/Slider.h>
 	
-			//example NativeConstruct
-			potenciador_slider->OnValueChanged.AddDynamic(this, &UCalibrar_Microfono::On_Slider_Change);
-			potenciador_slider->Value = 0.3;
+				//example NativeConstruct
+				new_slider->OnValueChanged.AddDynamic(this, &UCalibrar_Microfono::On_Slider_Change);
+				new_slider->Value = 0.3;
 
-			void UCalibrar_Microfono::On_Slider_Change(float value)
-			{
-				const float float_to_print = value;
-				if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::Printf(TEXT("float: %f"), float_to_print));
-			}
+				void UCalibrar_Microfono::On_Slider_Change(float value)
+				{
+					const float float_to_print = value;
+					if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::Printf(TEXT("float: %f"), float_to_print));
+				}
 
 			
 						]]>
