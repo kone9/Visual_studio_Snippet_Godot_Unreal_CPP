@@ -131,6 +131,46 @@
   </CodeSnippet>
 
 
- 
+  <!--<evento cuando cambia el slider el valor>-->
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Cuando el slider cambia el valor</Title>
+      <Author>Ariel Gimenez</Author>
+      <Description>Los slider tienen un valor, al moverlo cambia, este evento registra el cambio en un metodo</Description>
+      <!--<Shortcut> Alt </Shortcut>-->
+    </Header>
+    <Snippet>
+      <Code Language="CPP">
+        <![CDATA[
+		//.h
+		public:
+			UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+			class USlider* potenciador_slider{ nullptr };
+
+			UFUNCTION()
+			void On_Slider_Change(float value);
+
+		//.cpp
+			#include <Components/Slider.h>
+	
+			//example NativeConstruct
+			potenciador_slider->OnValueChanged.AddDynamic(this, &UCalibrar_Microfono::On_Slider_Change);
+			potenciador_slider->Value = 0.3;
+
+			void UCalibrar_Microfono::On_Slider_Change(float value)
+			{
+				const float float_to_print = value;
+				if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::Printf(TEXT("float: %f"), float_to_print));
+			}
+
+			
+						]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+
+
+
+
 </CodeSnippets>
 
